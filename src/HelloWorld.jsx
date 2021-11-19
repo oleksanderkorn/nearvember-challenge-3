@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ErrorPopup from "./ErrorPupop";
+import GifContainer from "./Gif";
 // import * as googleTTS from "google-tts-api";
 
 const HelloWorld = ({ currentUser, contract }) => {
@@ -14,6 +15,19 @@ const HelloWorld = ({ currentUser, contract }) => {
       setMessage(text);
     });
   });
+
+  // useEffect(() => {
+  //   if (message !== "") {
+  //     setIsLoading(true);
+  //     const url = googleTTS.getAudioUrl(message, {
+  //       lang: "en",
+  //       slow: false,
+  //       host: "https://translate.google.com",
+  //     });
+  //     setIsLoading(false);
+  //     new Audio(url).play();
+  //   }
+  // }, [message]);
 
   const isValidName = () => name !== "";
 
@@ -71,7 +85,8 @@ const HelloWorld = ({ currentUser, contract }) => {
           <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
             CHUCKY SPEAKS:
           </div>
-          <p className="mt-2 text-gray-500">{message}</p>
+          <p className="mt-2 mb-5 text-gray-500">{message}</p>
+          <GifContainer name={name} />
         </div>
       )}
     </div>
