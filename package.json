@@ -2,6 +2,7 @@
     "name": "ncd-ii-demo",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://oleksanderkorn.github.io/nearvember-challenge-3/",
     "dependencies": {
         "@craco/craco": "^6.4.0",
         "@headlessui/react": "^1.4.1",
@@ -24,7 +25,9 @@
         "start": "craco start",
         "build": "craco build",
         "test": "craco test",
-        "eject": "craco eject"
+        "eject": "craco eject",
+        "predeploy": "yarn build",
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": [
@@ -45,7 +48,6 @@
         ]
     },
     "devDependencies": {
-        "@types/node": "^16.11.9",
-        "typescript": "^4.5.2"
+        "gh-pages": "^3.2.3"
     }
 }
